@@ -8,7 +8,7 @@ The hardware I am currently using is :
  
 I would however recommand the use of a [Raspberry pi zero w](https://www.kubii.fr/les-cartes-raspberry-pi/1851-raspberry-pi-zero-w-kubii-3272496006997.html), which is a bit more expensive, but has wifi on board that will make the installation way easier.
  
-This project uses the [Pinmonori Pirate-Audio](https://github.com/pimoroni/pirate-audio) github repository. It is also based on other open source projects. If you find your work to be used in my project and want a shout out, feel free to contact me.
+:information_source: This project uses the [Pinmonori Pirate-Audio](https://github.com/pimoroni/pirate-audio) github repository. It is also based on other open source projects. If you find your work to be used in my project and want a shout out, feel free to contact me.
 
 #### How is the software different from the one provided by Pimonory? 
 
@@ -46,8 +46,10 @@ sudo chmod +x install.sh
 
 You are now ready to run the installation. Run install.sh with root privileges and specify the path to the folder you want the pi to play music from :
 
+:warning: Your path must not end with a slash (for example use /home/pi/Music rather than /home/pi/Music/)
+
 ```
-sudo ./install.sh /home/pi/Music/
+sudo ./install.sh /home/pi/Music
 ```
 
 Default folder will be /home/pi/Music if you don't mention any.
