@@ -52,5 +52,5 @@ sudo ./install.sh /home/pi/Music/
 
 Default folder will be /home/pi/Music if you don't mention any.
 
-### To be done
+## To be done
 
