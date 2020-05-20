@@ -16,6 +16,7 @@ This project uses the [Pinmonori Pirate-Audio](https://github.com/pimoroni/pirat
  - Reducing the volume increase/decrease sensibility
  - Hold the A button (play/pause button) for 3 seconds to safely shutdown the pi
  - Have the pi automatically play every song in a certain folder on boot
+ - Tried a few combinations to have the fastest boot possible
 ```
 
 ## Getting started
@@ -43,9 +44,13 @@ cd PIpod-Nano
 sudo chmod +x install.sh
 ```
 
-You are now ready to run the installation. Run install.sh with root privileges and specify the path to the folder you want the pi to play music from:
+You are now ready to run the installation. Run install.sh with root privileges and specify the path to the folder you want the pi to play music from :
 
 ```
 sudo ./install.sh /home/pi/Music/
 ```
+
+Default folder will be /home/pi/Music if you don't mention any.
+
+### To be done
 
