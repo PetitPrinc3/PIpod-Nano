@@ -70,5 +70,5 @@ Many thanks to :
 
 ## Feel like helping me ?
 
-I have a ton of projects and if you feel like helping me out, feel free to use this [Patreon](https://www.patreon.com/g_avroche)
+I have a ton of projects and if you feel like helping me out, feel free to use this [Patreon](https://www.patreon.com/g_avroche).
 Many thanks !
