@@ -5,7 +5,47 @@ The hardware I am currently using is :
  - Raspberry pi zero v1.3
  - [Pirate Audio Headphone Amp](https://shop.pimoroni.com/products/pirate-audio-headphone-amp)
  - [UPS Lite v1.2](https://fr.aliexpress.com/item/32954180664.html?spm=a2g0s.9042311.0.0.40de6c37VWMT3f)
+ 
+I would however recommand the use of a [Raspberry pi zero w](https://www.kubii.fr/les-cartes-raspberry-pi/1851-raspberry-pi-zero-w-kubii-3272496006997.html), which is a bit more expensive, but has wifi on board that will make the installation way easier.
+ 
+This project uses the [Pinmonori Pirate-Audio](https://github.com/pimoroni/pirate-audio) github repository. 
+
+#### How is the software different from the one provided by Pimonory? 
+
+```
+ - Reducing the volume increase/decrease sensibility
+ - Hold the A button (play/pause button) for 3 seconds to safely shutdown the pi
+ - Have the pi automatically play every song in a certain folder on boot
+```
 
 ## Getting started
 
 These instructions will get you a copy of the project up and running on your pi. 
+
+### Prerequisites
+
+Before following the steps below, make sure that yourn pi is connected to the internet and your Pirate Audio board is connected to your pi. At this point, it is preferable to have the pi plugged into the main, rather than having it running on the ups power supply. 
+
+### Installing
+
+A step by step series of examples that tell you how to get the project to work on your pi.
+
+First you need to clone the repository :
+
+```
+git clone https://github.com/G-a-v-r-o-c-h-e/PIpod-Nano
+```
+
+Then go to the Pipod-Nano folder and give install.sh the right permissions :
+
+```
+cd PIpod-Nano
+sudo chmod +x install.sh
+```
+
+You are now ready to run the installation. Run install.sh with root privileges and specify the path to the folder you want the pi to play music from:
+
+```
+sudo ./install.sh /home/pi/Music/
+```
+
