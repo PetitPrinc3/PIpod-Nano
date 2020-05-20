@@ -1,5 +1,3 @@
-python /usr/share/PIpodScripts/powerbutton.py &
-
 mkdir -p /tmp
 touch /tmp/.db$
 touch /usr/share/PIpodScripts/database

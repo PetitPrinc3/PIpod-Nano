@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ "$1" == "" ]
-then 
+then
 path=/home/pi/Music/
 else
 path=$1
@@ -59,10 +59,14 @@ fi
 echo '#!/bin/bash' && echo && echo path=$path && cat autoplay.sh > /usr/share/PIpodScripts/autoplay.sh
 chmod +x /usr/share/PIpodScripts/autoplay.sh
 mv powerbutton.py /usr/share/PIpodScripts/powerbutton.py
+mv /etc/rc.local /etc/rc.local.save
+cat /etc/rc.local.save | grep -v "exit 0" > /etc/rc.local
+echo 'python /usr/share/PIpodScripts/powerbutton.py &' >> /etc/rc.local
+echo 'exit 0'>> /etc/rc.local
+rm /etc/rc.local.save
 mv autoplay.service /etc/systemd/system/autoplay.service
 systemctl start autoplay.service
 systemctl enable autoplay.service
-
 echo
 
 success "Done"
