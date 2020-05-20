@@ -1,0 +1,15 @@
+[Unit]
+Description= Load the components of the PIpod software on boot. Designed by Gavroche.
+After=pulseaudio.service
+After=remote-fs.target
+After=sound.target
+After=mopidy.service
+
+[Service]
+Type=simple
+RemainAfterExit=no
+ExecStart=/usr/share/PIpodScripts/autoplay.sh
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
