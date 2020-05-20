@@ -60,3 +60,10 @@ Default folder will be /home/pi/Music if you don't mention any.
 - Add a battery indicator on the screen
 - Find a way to add a wake up function to the shutdown button
 ```
+
+## Thanks
+
+Many thanks to :
+ - The pimonori and mopidy community
+ - The pimonori staff
+ - The open source world
