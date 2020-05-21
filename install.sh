@@ -58,7 +58,10 @@ then
     mkdir /tmp
 fi
 
-echo '#!/bin/bash' && echo && echo path=$path && cat autoplay.sh > /usr/share/PIpodScripts/autoplay.sh
+echo '#!/bin/bash' > /usr/share/PIpodScripts/autoplay.sh
+echo >> /usr/share/PIpodScripts/autoplay.sh
+echo path=$path >> /usr/share/PIpodScripts/autoplay.sh
+cat autoplay.sh >> /usr/share/PIpodScripts/autoplay.sh
 chmod +x /usr/share/PIpodScripts/autoplay.sh
 mv powerbutton.py /usr/share/PIpodScripts/powerbutton.py
 mv /etc/rc.local /etc/rc.local.save
