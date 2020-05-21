@@ -2,7 +2,7 @@
 
 if [ "$1" == "" ]
 then
-path=/home/pi/Music/
+path=/home/pi/Music
 else
 path=$1
 fi
