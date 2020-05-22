@@ -84,6 +84,12 @@ path=/home/pi/Music
 ```
 Don't forget to create every folder and file that is mentioned into the script either.
 
+You need to make this script executable so run :
+
+```
+sudo chmod +x autoplay.sh
+```
+
 Great, so now we want this script to be run on boot, so we will create a systemd service.
 Create a file in /etc/systemd/system, that you'll name "something.service". Edit it whith whatever text editor you love and write :
 ```
@@ -138,6 +144,47 @@ Simply edit the volume +=/-= value from 5% to whatever you want (obviously a val
 First things first, we need to create a python file that will shutdown the pi if we hold the play button for a few secs. You can do this with whatever button you want, simply modify the GPIO value. My script will be the following :
 
 ```
+#!/usr/bin/env python
+from gpiozero import Button
+import time
+import os
+
+stopButton = Button(5)
+
+while True:
+        if stopButton.is_pressed:
+                tmp, duration = time.time(), 0
+                while stopButton.is_pressed:
+                        duration = time.time() - tmp
+                        if duration > 3:
+                                os.system("shutdown now -h")
+
+        time.sleep(1)
+```
+
+Now to have this script run on boot, we will edit /etc/rc.local and add the following line before "exit 0" :
+
+```
+sudo python /path/to/your/pythonscript.py
+
+exit 0
+```
+
+And you're done ! You've succesfully (hopefully) performed every modification that the automated installation would have done !
+
+## Having an issue ?
+
+### Common issues 
+
+- The autoplay.sh seems not to be run on boot : no song is loaded to my playlist.
+ ```
+ Answer : did you give your script the authorization to be run ? (chmod +x) If so, check 'systemctl status autoplay'. If an mpd error appears, you need to make sure that mpc is working correctly (simply type mpc) and/or increase the sleeping time in your autoplay.sh file. if mpc is not working, try to reinstall mpd-mopidy.
+ ```
+ - The power button is not working.
+ ```
+ Answer : check wether the /etc/rc.local file is executable or not. make sure you did not forget the "&". Check your python syntax.
+ ```
+ For any other questions, feel free to contact me !
 
 ## To be done
 
