@@ -71,6 +71,7 @@ cat /etc/rc.local.save | grep -v "exit 0" > /etc/rc.local
 echo 'sudo python /usr/share/PIpodScripts/powerbutton.py &' >> /etc/rc.local
 echo > /etc/rc.local
 echo 'exit 0'>> /etc/rc.local
+sudo chmod +x /etc/rc.local
 rm /etc/rc.local.save
 mv PIpod.service /etc/systemd/system/PIpod.service
 systemctl start PIpod.service
