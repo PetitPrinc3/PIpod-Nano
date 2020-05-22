@@ -10,6 +10,8 @@ I would however recommand the use of a [Raspberry pi zero w](https://www.kubii.f
  
 :information_source: This project uses the [Pinmonori Pirate-Audio](https://github.com/pimoroni/pirate-audio) github repository. It is also based on other open source projects. If you find your work to be used in my project and want a shout out, feel free to contact me.
 
+Remember that those steps worked for me, they may not work for you. If you encounter any issue, please check the last paragraph.
+
 #### How is the software different from the one provided by Pimonory? 
 
 ```
@@ -25,9 +27,10 @@ These instructions will get you a copy of the project up and running on your pi.
 
 ### Prerequisites
 
-Before following the steps below, make sure that yourn pi is connected to the internet and your Pirate Audio board is connected to your pi. At this point, it is preferable to have the pi plugged into the main, rather than having it running on the ups power supply. 
+You'll need a fresh install of [Raspbian](https://www.raspberrypi.org/downloads/raspbian/) Buster.
+Before following the steps below, make sure that your pi is connected to the internet and your Pirate Audio board is connected to your pi. At this point, it is preferable to have the pi plugged into the main, rather than having it running on the ups power supply. 
 
-### Installing
+### Automatic Setup
 
 A step by step series of examples that tell you how to get the project to work on your pi.
 
@@ -53,6 +56,88 @@ sudo ./install.sh /home/pi/Music
 ```
 
 Default folder will be /home/pi/Music if you don't mention any.
+
+### Manual Setup
+
+First, follow the steps provided by [Pimonori](https://github.com/pimoroni/pirate-audio) to get the pirate audio software up and running on your pi.
+
+Then you'll need to install mpd for mopidy and mpc, in order to have control over the the webclient through commands.
+
+```
+sudo apt-get install mpd-mopidy mpc -y
+```
+
+#### Play music on boot
+
+Now, you'll want to create a bash script, that will allow you to have the pi play songs on boot automaticaly. You can either do something pretty simple such as :
+ ```
+ #!/bin/bash
+ sleep 60 
+ for song in `ls /home/pi/Music`; do mpc add 'file:///home/pi/Music/$song'; done
+ mpc play
+ ```
+Or you can also do something a bit more complex, but that should be faster on boot, such as my autoplay.sh file.
+If you decide that you want use this script, make sure that you add the following lines at the begining of the document :
+```
+#!/bin/bash
+path=/home/pi/Music
+```
+Don't forget to create every folder and file that is mentioned into the script either.
+
+Great, so now we want this script to be run on boot, so we will create a systemd service.
+Create a file in /etc/systemd/system, that you'll name "something.service". Edit it whith whatever text editor you love and write :
+```
+[Unit]
+Description= Some text
+After=pulseaudio.service
+After=remote-fs.target
+After=sound.target
+After=mopidy.service
+
+[Service]
+Type=simple
+RemainAfterExit=no
+ExecStart=/path/to/your/autoplay.sh
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+```
+
+Now, to have it ran on boot :
+
+```
+sudo systemctl start something.service
+sudo systemctl enable something.service
+```
+
+#### Edit the volume button's sensibility
+
+To do this, navigate to /usr/local/lib/python3.7/dist-packages/mopidy_raspberry_gpio/ and edit the frontend.py file.
+
+You're looking for this part of the document :
+
+```
+    def handle_volume_up(self):
+        volume = self.core.mixer.get_volume().get()
+        volume += 5
+        volume = min(volume, 100)
+        self.core.mixer.set_volume(volume)
+
+    def handle_volume_down(self):
+        volume = self.core.mixer.get_volume().get()
+        volume -= 5
+        volume = max(volume, 0)
+        self.core.mixer.set_volume(volume)
+```
+
+Simply edit the volume +=/-= value from 5% to whatever you want (obviously a value between 0 and 100)
+
+#### Poweroff button
+
+First things first, we need to create a python file that will shutdown the pi if we hold the play button for a few secs. You can do this with whatever button you want, simply modify the GPIO value. My script will be the following :
+
+```
 
 ## To be done
 
