@@ -15,13 +15,13 @@ then
     lastsong=`sed -n '1p' /usr/share/PIpodScripts/database`
     mpc add file://$path/$lastsong
     mpc play
-    for song in `cat /usr/share/PIpodScripts/database`; do mpc add file://$path/$song; done
+    for song in `cat /usr/share/PIpodScripts/database | grep -v "$lastsong"`; do mpc add file://$path/$song; done
 else
     if [[ ! -z /var/lib/mopidy/m3u/ ]]
     then
         lastsong=`sed -n '1p' /usr/share/PIpodScripts/database`                                                                                                                                                        mpc add file:///$path/$lastsong
         mpc play
-        for song in `cat /usr/share/PIpodScripts/database`; do mpc add file://$path/$song; done     
+        for song in `cat /usr/share/PIpodScripts/database | grep -v "$lastsong"`; do mpc add file://$path/$song; done     
     else
         list=`find /var/lib/mopidy/m3u/ -printf '%T+ %p\n' | sort -r | grep "m3u8" | head -1 |grep -Eoi '/var/[^>]'`
         mpc load $list
