@@ -72,6 +72,7 @@ rm /etc/rc.local.save
 mv autoplay.service /etc/systemd/system/autoplay.service
 systemctl start autoplay.service
 systemctl enable autoplay.service
+mv frontend.py /usr/local/lib/python3.7/dist-packages/mopidy_raspberry_gpio/frontend.py
 echo
 
 success "Done"
