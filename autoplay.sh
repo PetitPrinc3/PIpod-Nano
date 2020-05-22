@@ -43,5 +43,5 @@ lists=`ls /var/lib/mopidy/m3u/ | grep -c ""`
 if [ "$lists" -gt "3" ]
 then
     last=`find /var/lib/mopidy/m3u/ -printf '%T+ %p\n' | sort -r | grep "m3u8" | head -1 |grep -Eoi '/var/[^>]+'`
-    for list in find /var/lib/mopidy/m3u | grep "m3u8" | grep -v "$last"; do rm $list; done
+    for list in `find /var/lib/mopidy/m3u | grep "m3u8" | grep -v "$last"`; do rm $list; done
 fi
