@@ -76,3 +76,4 @@ mv frontend.py /usr/local/lib/python3.7/dist-packages/mopidy_raspberry_gpio/fron
 echo
 
 success "Done"
+echo
