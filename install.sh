@@ -77,6 +77,7 @@ mv PIpod.service /etc/systemd/system/PIpod.service
 systemctl start PIpod.service
 systemctl enable PIpod.service
 mv frontend.py /usr/local/lib/python3.7/dist-packages/mopidy_raspberry_gpio/frontend.py
+sudo mv mopidy.conf /etc/mopidy/mopidy.conf
 echo
 
 success "Done"
