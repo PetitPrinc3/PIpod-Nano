@@ -47,7 +47,7 @@ echo
 
 inform "Now performing Gavroche's modifications"
 
-apt-get install mpd mpc
+sudo apt-get install mpc
 
 if [[ ! -d /usr/share/PIpodScripts ]]
 then
