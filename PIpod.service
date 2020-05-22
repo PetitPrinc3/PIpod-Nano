@@ -9,7 +9,6 @@ After=mopidy.service
 Type=simple
 RemainAfterExit=no
 ExecStart=/usr/share/PIpodScripts/autoplay.sh
-Restart=on-failure
 
 [Install]
 WantedBy=multi-user.target
