@@ -23,7 +23,7 @@ else
     mpc play
     for song in `cat /usr/share/PIpodScripts/database`; do mpc add file://$path/$song; done     
     else
-         list=`find /var/lib/mopidy/m3u/ -printf '%T+ %p\n' | sort -r head`
+         list=`find /var/lib/mopidy/m3u/ -printf '%T+ %p\n' | sort -r | grep "m3u8" | head -1 |grep -Eoi '/var/[^>]'`
          mpc load $list
          mpc play
     fi
@@ -37,3 +37,10 @@ mpc save $filename
 #Cleaning
 
 rm /tmp/.db$
+
+lists=`ls /var/lib/mopidy/m3u/ | grep -c ""`
+if [ "$lists" -gt "3" ]
+then
+    last=`find /var/lib/mopidy/m3u/ -printf '%T+ %p\n' | sort -r | grep "m3u8" | head -1 |grep -Eoi '/var/[^>]+'`
+    for list in find /var/lib/mopidy/m3u | grep "m3u8" | grep -v "$last"; do rm $list; done
+fi
