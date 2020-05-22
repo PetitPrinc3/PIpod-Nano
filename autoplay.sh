@@ -26,6 +26,7 @@ else
          list=`find /var/lib/mopidy/m3u/ -printf '%T+ %p\n' | sort -r | grep "m3u8" | head -1 |grep -Eoi '/var/[^>]'`
          mpc load $list
          mpc play
+         echo 'mpc playlist $list loaded'
     fi
 fi
 
