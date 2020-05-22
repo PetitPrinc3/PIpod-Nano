@@ -6,6 +6,7 @@ mv /usr/share/PIpodScripts/database /usr/share/PIpodScripts/database.save
 cat /tmp/.db$ /usr/share/PIpodScripts/database.save > /usr/share/PIpodScripts/database
 
 sleep 60
+mpc volume 1
 
 #Loading the playlist
 
@@ -16,7 +17,7 @@ then
     mpc play
     for song in `cat /usr/share/PIpodScripts/database`; do mpc add file://$path/$song; done
 else
-    if [[ ! -z /usr/share/PIpodScripts/lists/ ]]
+    if [[ ! -z /var/lib/mopidy/m3u/ ]]
     then
     lastsong=$(sed -n '1p' /usr/share/PIpodScripts/database)                                                                                                                                                           mpc add file:///$path/$lastsong
     mpc play
