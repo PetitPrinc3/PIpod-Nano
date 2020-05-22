@@ -59,6 +59,7 @@ Default folder will be /home/pi/Music if you don't mention any.
 ```
 - Add a battery indicator on the screen
 - Find a way to add a wake up function to the shutdown button
+- Create a 3D model for a nic looking shell
 ```
 
 ## Thanks
