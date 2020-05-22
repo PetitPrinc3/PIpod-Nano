@@ -47,7 +47,7 @@ echo
 
 inform "Now performing Gavroche's modifications"
 
-sudo apt-get install mpc -y
+sudo apt-get install mpc mopidy-mpd -y
 
 if [[ ! -d /usr/share/PIpodScripts ]]
 then
@@ -66,7 +66,8 @@ chmod +x /usr/share/PIpodScripts/autoplay.sh
 mv powerbutton.py /usr/share/PIpodScripts/powerbutton.py
 mv /etc/rc.local /etc/rc.local.save
 cat /etc/rc.local.save | grep -v "exit 0" > /etc/rc.local
-echo 'python /usr/share/PIpodScripts/powerbutton.py &' >> /etc/rc.local
+echo 'sudo python /usr/share/PIpodScripts/powerbutton.py &' >> /etc/rc.local
+echo > /etc/rc.local
 echo 'exit 0'>> /etc/rc.local
 rm /etc/rc.local.save
 mv autoplay.service /etc/systemd/system/autoplay.service
