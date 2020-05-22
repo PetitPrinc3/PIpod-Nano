@@ -178,11 +178,17 @@ And you're done ! You've succesfully (hopefully) performed every modification th
 
 - The autoplay.sh seems not to be run on boot : no song is loaded to my playlist.
  ```
- Answer : did you give your script the authorization to be run ? (chmod +x) If so, check 'systemctl status autoplay'. If an mpd error appears, you need to make sure that mpc is working correctly (simply type mpc) and/or increase the sleeping time in your autoplay.sh file. if mpc is not working, try to reinstall mpd-mopidy.
+ Answer : did you give your script the authorization to be run ? (chmod +x) 
+ If so, check 'systemctl status autoplay'. 
+ If an mpd error appears, you need to make sure that mpc is working correctly. (simply type mpc)  
+ if mpc is not working, try to reinstall mpd-mopidy.
+ Otherwise, you may need to increase the sleeping time in your autoplay.sh file.
  ```
  - The power button is not working.
  ```
- Answer : check wether the /etc/rc.local file is executable or not. make sure you did not forget the "&". Check your python syntax.
+ Answer : check wether the /etc/rc.local file is executable or not. 
+ make sure you did not forget the "&". 
+ Check your python syntax.
  ```
  For any other questions, feel free to contact me !
 
