@@ -5,7 +5,7 @@ for song in `ls $path`; do if [ `cat /usr/share/PIpodScripts/database |grep -c $
 mv /usr/share/PIpodScripts/database /usr/share/PIpodScripts/database.save
 cat /tmp/.db$ /usr/share/PIpodScripts/database.save > /usr/share/PIpodScripts/database
 
-sleep 10
+sleep 60
 
 #Loading the playlist
 
