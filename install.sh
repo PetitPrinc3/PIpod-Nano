@@ -49,6 +49,8 @@ inform "Now performing Gavroche's modifications"
 
 sudo apt-get install mpc mopidy-mpd -y
 
+echo
+
 if [[ ! -d /usr/share/PIpodScripts ]]
 then
     mkdir -p /usr/share/PIpodScripts
@@ -70,9 +72,9 @@ echo 'sudo python /usr/share/PIpodScripts/powerbutton.py &' >> /etc/rc.local
 echo > /etc/rc.local
 echo 'exit 0'>> /etc/rc.local
 rm /etc/rc.local.save
-mv autoplay.service /etc/systemd/system/autoplay.service
-systemctl start autoplay.service
-systemctl enable autoplay.service
+mv PIpod.service /etc/systemd/system/PIpod.service
+systemctl start PIpod.service
+systemctl enable PIpod.service
 mv frontend.py /usr/local/lib/python3.7/dist-packages/mopidy_raspberry_gpio/frontend.py
 echo
 
