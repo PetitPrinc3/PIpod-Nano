@@ -18,9 +18,10 @@ then
     sleep 1
     for song in `cat /usr/share/PIpodScripts/database | grep -v "$lastsong"`; do mpc add file://$path/$song; done
 else
-    if [[ ! -z /var/lib/mopidy/m3u/ ]]
+    if [ -z /var/lib/mopidy/m3u/ ]
     then
-        lastsong=`sed -n '1p' /usr/share/PIpodScripts/database`                                                                                                                                                        mpc add file:///$path/$lastsong
+        lastsong=`sed -n '1p' /usr/share/PIpodScripts/database`
+        mpc add file:///$path/$lastsong
         mpc play
         sleep 1
         for song in `cat /usr/share/PIpodScripts/database | grep -v "$lastsong"`; do mpc add file://$path/$song; done     
