@@ -197,7 +197,7 @@ metadata_timeout = 5000
 ```
 
 
-And you're done ! You've succesfully (hopefully) performed every modification that the automated installation would have done !
+And you're done ! You've succesfully (hopefully) performed every modification that the automated installation would have done ! Reboot the pi and here you go !
 
 ## Having an issue ?
 
