@@ -9,11 +9,11 @@ The hardware I am currently using is :
  
 I would however recommand the use of a [Raspberry pi zero w](https://www.kubii.fr/les-cartes-raspberry-pi/1851-raspberry-pi-zero-w-kubii-3272496006997.html), which is a bit more expensive, but has wifi on board that will make the installation way easier.
  
-:information_source: This project uses the [Pinmonori Pirate-Audio](https://github.com/pimoroni/pirate-audio) github repository. It is also based on other open source projects. If you find your work to be used in my project and want a shout out, feel free to contact me.
+:information_source: This project uses the [Pinmonori Pirate-Audio](https://github.com/pimoroni/pirate-audio) github repository. This couldn't have been done without the huge work of [Mopidy](https://mopidy.com/) either ! It is also based on other open source projects. If you find your work to be used in my project and want a shout out, feel free to contact me.
 
 Remember that those steps worked for me, they may not work for you. If you encounter any issue, please check the last paragraph.
 
-#### How is the software different from the one provided by Pimonory? 
+#### How is the software different from the one provided by Pimonori? 
 
 ```
  - Reducing the volume increase/decrease sensibility
