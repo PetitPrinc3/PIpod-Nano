@@ -12,6 +12,7 @@ mpc volume 1
 
 if [ -s /tmp/.db$ ]
 then
+	echo 'New songs were found !'
 	lastsong=`sed -n '1p' /usr/share/PIpodScripts/database`
 	mpc add file://$path/$lastsong
 	mpc play
@@ -20,6 +21,7 @@ then
 else
 	if [ -z /var/lib/mopidy/m3u/ ]
 	then
+		echo "No new song available. No playlist found."
 		lastsong=`sed -n '1p' /usr/share/PIpodScripts/database`
 		mpc add file:///$path/$lastsong
 		mpc play
@@ -29,7 +31,7 @@ else
 		list=`find /var/lib/mopidy/m3u/ -printf '%T+ %p\n' | sort -r | grep "m3u8" | head -1 |grep -Eoi '/var/[^>]+'`
 		mpc load $list
 		mpc play
-		echo 'mpc playlist $list loaded'
+		echo 'mpc playlist $list loaded. No new song was found.'
 	fi
 fi
 
