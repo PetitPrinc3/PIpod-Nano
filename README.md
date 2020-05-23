@@ -1,4 +1,4 @@
-![](image/PIPOD1.jpg
+![](image/PIPOD1.png)
 # PIpod-Nano
 
 A DIY Ipod nano lookalike involving a raspberry pi zero. 
