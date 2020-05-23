@@ -67,7 +67,7 @@ First, follow the steps provided by [Pimonori](https://github.com/pimoroni/pirat
 Then you'll need to install mpd for mopidy and mpc, in order to have control over the the webclient through commands.
 
 ```
-sudo apt-get install mpd-mopidy mpc -y
+sudo apt-get install mopidy-mpd mpc -y
 ```
 
 #### Play music on boot
