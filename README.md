@@ -1,5 +1,5 @@
 ![](image/PIPOD1.png)
-# PIpod-Nano
+# 
 
 A DIY Ipod nano lookalike involving a raspberry pi zero. 
 The hardware I am currently using is :
