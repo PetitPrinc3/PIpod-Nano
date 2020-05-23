@@ -217,6 +217,16 @@ And you're done ! You've succesfully (hopefully) performed every modification th
  make sure you did not forget the "&". 
  Check your python syntax.
  ```
+ 
+ - Some of my files are not loading.
+ ```
+ Answer : Are you using a .mp3 / .wav / .flac file ?
+ If you are not, please make sure your file is mopidy compatible and add your extension to the autoplay.sh as follows :
+ sudo nano /usr/share/PIpodScripts/autoplay.sh
+ Edit this line :
+ for song in `ls $path | grep ".mp3\|.wav\|.flac\|.yourextension"`; do if [ `cat /usr/share/PIpodScripts/database |grep -c $song` -eq "0" ]; then echo $song >> /tmp/.db$;fi ; done
+ ```
+ 
  For any other questions, feel free to contact me !
 
 ## To be done
