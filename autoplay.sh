@@ -1,7 +1,7 @@
 mkdir -p /tmp
 touch /tmp/.db$
 touch /usr/share/PIpodScripts/database
-for song in `ls $path`; do if [ `cat /usr/share/PIpodScripts/database |grep -c $song` -eq "0" ]; then echo $song >> /tmp/.db$;fi ; done
+for song in `ls $path | grep ".mp3\|.wav\|.flac"`; do if [ `cat /usr/share/PIpodScripts/database |grep -c $song` -eq "0" ]; then echo $song >> /tmp/.db$;fi ; done
 mv /usr/share/PIpodScripts/database /usr/share/PIpodScripts/database.save
 cat /tmp/.db$ /usr/share/PIpodScripts/database.save > /usr/share/PIpodScripts/database
 
