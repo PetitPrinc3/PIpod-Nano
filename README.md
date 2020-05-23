@@ -261,5 +261,5 @@ Many thanks to :
 
 ## Feel like helping me ?
 
-I have a ton of projects and if you feel like helping me out, feel free to use my [Paypal](paypal.me/AReppelin).
+I have a ton of projects and if you feel like helping me out, feel free to use my [Paypal](https://paypal.me/AReppelin).
 Many thanks !
