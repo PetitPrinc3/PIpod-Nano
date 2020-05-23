@@ -28,7 +28,7 @@ else
 		sleep 1
 		for song in `cat /usr/share/PIpodScripts/database | grep -v "$lastsong"`; do mpc add file://$path/$song; done     
 	else
-		list=`find /var/lib/mopidy/m3u/ -printf '%T+ %p\n' | sort -r | grep "m3u8" | head -1 |grep -Eoi '/2[^>]+' | tr -d "/"`
+		list=`find /var/lib/mopidy/m3u/ -printf '%T+ %p\n' | sort -r | grep "m3u8" | head -1 |grep -Eoi '/2[^>]+' | tr -d "/",".m3u8"`
 		mpc load $list
 		mpc play
 		echo mpc playlist $list loaded. No new song was found.
