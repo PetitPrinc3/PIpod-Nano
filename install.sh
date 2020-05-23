@@ -80,7 +80,6 @@ mv frontend.py /usr/local/lib/python3.7/dist-packages/mopidy_raspberry_gpio/fron
 mv mopidy.conf /etc/mopidy/mopidy.conf
 sudo systemctl stop PIpod.service
 sudo rm /usr/share/PIpodScripts/database
-sudo rm /var/lib/mopidy/m3u/*
 echo
 
 success "Done"
