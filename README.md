@@ -57,6 +57,8 @@ sudo ./install.sh /home/pi/Music
 
 Default folder will be /home/pi/Music if you don't mention any.
 
+Reboot and you should be done !
+
 ### Manual Setup
 
 First, follow the steps provided by [Pimonori](https://github.com/pimoroni/pirate-audio) to get the pirate audio software up and running on your pi.
@@ -169,6 +171,31 @@ sudo python /path/to/your/pythonscript.py
 
 exit 0
 ```
+
+#### Allow Mopidy to load metadata
+
+It is possible that Mopidy won't load your files properly (the artcover, title and author, etc.). To correct that, we need to increase the value of metadata_timeout in the mopidy.conf file. it is located at /etc/mopidy/mopidy.conf and you should edit the following :
+
+```
+[file]
+enabled = true
+media_dirs = /home/pi/Music
+show_dotfiles = false
+excluded_file_extensions =
+  .directory
+  .html
+  .jpeg
+  .jpg
+  .log
+  .nfo
+  .pdf
+  .png
+  .txt
+  .zip
+follow_symlinks = false
+metadata_timeout = 5000
+```
+
 
 And you're done ! You've succesfully (hopefully) performed every modification that the automated installation would have done !
 
