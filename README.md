@@ -18,7 +18,7 @@ Remember that those steps worked for me, they may not work for you. If you encou
 ```
  - Reducing the volume increase/decrease sensibility
  - Hold the A button (play/pause button) for 3 seconds to safely shutdown the pi
- - Holding a volume button will increase the volume by one every .25 second
+ - Holding a volume button (A/Y) will increase the volume by one every .25 second
  - Have the pi automatically play every song in a certain folder on boot
  - Tried a few combinations to have the fastest boot possible
 ```
