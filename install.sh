@@ -78,6 +78,9 @@ systemctl start PIpod.service
 systemctl enable PIpod.service
 mv frontend.py /usr/local/lib/python3.7/dist-packages/mopidy_raspberry_gpio/frontend.py
 mv mopidy.conf /etc/mopidy/mopidy.conf
+sudo systemctl stop PIpod.service
+sudo rm /usr/share/PIpodScripts/database
+sudo rm /var/lib/mopidy/m3u/*
 echo
 
 success "Done"
