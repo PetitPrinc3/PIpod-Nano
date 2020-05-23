@@ -65,10 +65,10 @@ echo >> /usr/share/PIpodScripts/autoplay.sh
 echo path=$path >> /usr/share/PIpodScripts/autoplay.sh
 cat autoplay.sh >> /usr/share/PIpodScripts/autoplay.sh
 chmod +x /usr/share/PIpodScripts/autoplay.sh
-mv powerbutton.py /usr/share/PIpodScripts/powerbutton.py
+mv buttons.py /usr/share/PIpodScripts/buttons.py
 mv /etc/rc.local /etc/rc.local.save
 cat /etc/rc.local.save | grep -v "exit 0" > /etc/rc.local
-echo 'sudo python /usr/share/PIpodScripts/powerbutton.py &' >> /etc/rc.local
+echo 'sudo python /usr/share/PIpodScripts/buttons.py &' >> /etc/rc.local
 echo >> /etc/rc.local
 echo 'exit 0'>> /etc/rc.local
 sudo chmod +x /etc/rc.local
