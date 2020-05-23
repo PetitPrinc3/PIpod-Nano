@@ -12,25 +12,25 @@ mpc volume 1
 
 if [ -s /tmp/.db$ ]
 then
-    lastsong=`sed -n '1p' /usr/share/PIpodScripts/database`
-    mpc add file://$path/$lastsong
-    mpc play
-    sleep 1
-    for song in `cat /usr/share/PIpodScripts/database | grep -v "$lastsong"`; do mpc add file://$path/$song; done
+	lastsong=`sed -n '1p' /usr/share/PIpodScripts/database`
+	mpc add file://$path/$lastsong
+	mpc play
+	sleep 1
+	for song in `cat /usr/share/PIpodScripts/database | grep -v "$lastsong"`; do mpc add file://$path/$song; done
 else
-    if [ -z /var/lib/mopidy/m3u/ ]
-    then
-        lastsong=`sed -n '1p' /usr/share/PIpodScripts/database`
-        mpc add file:///$path/$lastsong
-        mpc play
-        sleep 1
-        for song in `cat /usr/share/PIpodScripts/database | grep -v "$lastsong"`; do mpc add file://$path/$song; done     
-    else
-        list=`find /var/lib/mopidy/m3u/ -printf '%T+ %p\n' | sort -r | grep "m3u8" | head -1 |grep -Eoi '/var/[^>]'`
-        mpc load $list
-        mpc play
-        echo 'mpc playlist $list loaded'
-    fi
+	if [ -z /var/lib/mopidy/m3u/ ]
+	then
+		lastsong=`sed -n '1p' /usr/share/PIpodScripts/database`
+		mpc add file:///$path/$lastsong
+		mpc play
+		sleep 1
+		for song in `cat /usr/share/PIpodScripts/database | grep -v "$lastsong"`; do mpc add file://$path/$song; done     
+	else
+		list=`find /var/lib/mopidy/m3u/ -printf '%T+ %p\n' | sort -r | grep "m3u8" | head -1 |grep -Eoi '/var/[^>]'`
+		mpc load $list
+		mpc play
+		echo 'mpc playlist $list loaded'
+	fi
 fi
 
 #Saving
@@ -45,6 +45,6 @@ rm /tmp/.db$
 lists=`ls /var/lib/mopidy/m3u/ | grep -c ""`
 if [ "$lists" -gt "3" ]
 then
-    last=`find /var/lib/mopidy/m3u/ -printf '%T+ %p\n' | sort -r | grep "m3u8" | head -1 |grep -Eoi '/var/[^>]+'`
-    for list in `find /var/lib/mopidy/m3u | grep "m3u8" | grep -v "$last"`; do rm $list; done
+	last=`find /var/lib/mopidy/m3u/ -printf '%T+ %p\n' | sort -r | grep "m3u8" | head -1 |grep -Eoi '/var/[^>]+'`
+	for list in `find /var/lib/mopidy/m3u | grep "m3u8" | grep -v "$last"`; do rm $list; done
 fi
