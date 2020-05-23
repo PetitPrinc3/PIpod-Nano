@@ -232,7 +232,7 @@ And you're done ! You've succesfully (hopefully) performed every modification th
 ## To be done
 
 ```
-- Allow the loading of files that contain spaces in their names
+- Allow the loading of files that contain spaces in their name
 - Add a battery indicator on the screen
 - Find a way to add a wake up function to the shutdown button
 - Create a 3D model for a nice looking shell
