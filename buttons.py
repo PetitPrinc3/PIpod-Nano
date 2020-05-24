@@ -4,6 +4,7 @@ import time
 import os
 
 stopButton = Button(5)
+volumeUp, volumeDown = Button(20), Button(6)
 
 while True:
         if stopButton.is_pressed:
@@ -15,13 +16,13 @@ while True:
         if volumeUp.is_pressed:
                 time.sleep(.25)
                 while volumeUp.is_pressed:
-                        os.system("mpc volume +1")
-                        time.sleep(.25)
+                        os.system("mpc volume +5")
+                        time.sleep(.01)
 
         if volumeDown.is_pressed:
                 time.sleep(.25)
                 while volumeDown.is_pressed:
-                        os.system("mpc volume -1")
-                        time.sleep(.25)
+                        os.system("mpc volume -5")
+                        time.sleep(.01)
 
         time.sleep(1)
