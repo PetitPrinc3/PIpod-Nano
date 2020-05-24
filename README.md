@@ -1,7 +1,8 @@
 ![](image/PIPOD1.png)
 # 
 
-A DIY Ipod nano lookalike involving a raspberry pi zero. 
+A DIY Ipod nano lookalike involving a raspberry pi zero.
+<img align="right" width="210" height="150" src="image/Pipod-nano.png">
 The hardware I am currently using is :
  - Raspberry pi zero v1.3
  - [Pirate Audio Headphone Amp](https://shop.pimoroni.com/products/pirate-audio-headphone-amp)
