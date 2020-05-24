@@ -181,7 +181,7 @@ while True:
 Now to have this script run on boot, we will edit /etc/rc.local and add the following line before "exit 0" :
 
 ```
-sudo python /path/to/your/pythonscript.py
+sudo python /path/to/your/pythonscript.py &
 
 exit 0
 ```
