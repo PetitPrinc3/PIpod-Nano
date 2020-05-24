@@ -35,6 +35,8 @@ else
 	fi
 fi
 
+mpc repeat on
+
 #Saving
 
 filename=`date +"%Y%m%d%T" | tr -d ":"`
