@@ -40,14 +40,14 @@ A step by step series of examples that tell you how to get the project to work o
 First you need to clone the repository :
 
 ```
-git clone https://github.com/G-a-v-r-o-c-h-e/PIpod-Nano
+pi@raspberrypi:~ $ git clone https://github.com/G-a-v-r-o-c-h-e/PIpod-Nano
 ```
 
 Then go to the Pipod-Nano folder and give install.sh the right permissions :
 
 ```
-cd PIpod-Nano
-sudo chmod +x install.sh
+pi@raspberrypi:~ $ cd PIpod-Nano
+pi@raspberrypi:~ $ sudo chmod +x install.sh
 ```
 
 You are now ready to run the installation. Run install.sh with root privileges and specify the path to the folder you want the pi to play music from :
@@ -55,7 +55,7 @@ You are now ready to run the installation. Run install.sh with root privileges a
 :warning: Your path must not end with a slash (for example use /home/pi/Music rather than /home/pi/Music/)
 
 ```
-sudo ./install.sh /home/pi/Music
+pi@raspberrypi:~ $ sudo ./install.sh /home/pi/Music
 ```
 
 Default folder will be /home/pi/Music if you don't mention any.
@@ -69,7 +69,7 @@ First, follow the steps provided by [Pimonori](https://github.com/pimoroni/pirat
 Then you'll need to install mpd for mopidy and mpc, in order to have control over the the webclient through commands.
 
 ```
-sudo apt-get install mopidy-mpd mpc -y
+pi@raspberrypi:~ $ sudo apt-get install mopidy-mpd mpc -y
 ```
 
 #### Play music on boot
@@ -92,7 +92,7 @@ Don't forget to create every folder and file that is mentioned into the script e
 You need to make this script executable so run :
 
 ```
-sudo chmod +x autoplay.sh
+pi@raspberrypi:~ $ sudo chmod +x autoplay.sh
 ```
 
 Great, so now we want this script to be run on boot, so we will create a systemd service.
@@ -118,8 +118,8 @@ WantedBy=multi-user.target
 Now, to have it ran on boot :
 
 ```
-sudo systemctl start something.service
-sudo systemctl enable something.service
+pi@raspberrypi:~ $ sudo systemctl start something.service
+pi@raspberrypi:~ $ sudo systemctl enable something.service
 ```
 
 #### Edit the volume button's sensibility
