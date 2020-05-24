@@ -18,7 +18,7 @@ Remember that those steps worked for me, they may not work for you. If you encou
 ```
  - Reducing the volume increase/decrease sensibility
  - Hold the A button (play/pause button) for 3 seconds to safely shutdown the pi
- - Holding a volume button (A/Y) will increase the volume by one every .25 second
+ - Holding a volume button (A/Y) will increase the volume by five every .01 second
  - Have the pi automatically play every song in a certain folder on boot
  - Tried a few combinations to have the fastest boot possible
 ```
@@ -154,6 +154,7 @@ import time
 import os
 
 stopButton = Button(5)
+volumeUp, volumeDown = Button(20), Button(6)
 
 while True:
         if stopButton.is_pressed:
@@ -165,17 +166,16 @@ while True:
         if volumeUp.is_pressed:
                 time.sleep(.25)
                 while volumeUp.is_pressed:
-                        os.system("mpc volume +1")
-                        time.sleep(.25)
+                        os.system("mpc volume +5")
+                        time.sleep(.01)
 
         if volumeDown.is_pressed:
                 time.sleep(.25)
                 while volumeDown.is_pressed:
-                        os.system("mpc volume -1")
-                        time.sleep(.25)
+                        os.system("mpc volume -5")
+                        time.sleep(.01)
 
         time.sleep(1)
-
 ```
 
 Now to have this script run on boot, we will edit /etc/rc.local and add the following line before "exit 0" :
