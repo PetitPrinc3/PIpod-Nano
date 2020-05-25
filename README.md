@@ -189,7 +189,7 @@ exit 0
 
 #### Allow Mopidy to load metadata
 
-It is possible that Mopidy won't load your files properly (the artcover, title and author, etc.). To correct that, we need to increase the value of metadata_timeout in the mopidy.conf file. it is located at /etc/mopidy/mopidy.conf and you should edit the following :
+It is possible that Mopidy won't load your files properly (the artcover, title and author, etc.). To correct that, we need to increase the value of metadata_timeout in the mopidy.conf file. It is located at /etc/mopidy/mopidy.conf and you should edit the following :
 
 ```
 [file]
