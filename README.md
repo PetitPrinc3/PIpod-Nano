@@ -242,7 +242,7 @@ And you're done ! You've succesfully (hopefully) performed every modification th
  for song in `ls $path | grep ".mp3\|.wav\|.flac\|.yourextension"`; do if [ `cat /usr/share/PIpodScripts/database |grep -c $song` -eq "0" ]; then echo $song >> /tmp/.db$;fi ; done
  ```
  
- For any other questions, feel free to [contact me](http://mailto:gavrochebackups@gmail.com?subject=pipodnano) !
+ For any other questions, feel free to contact me !
 
 ## To be done
 
