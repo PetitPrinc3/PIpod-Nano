@@ -224,7 +224,8 @@ And you're done ! You've succesfully (hopefully) performed every modification th
  If so, check 'systemctl status autoplay'. 
  If an mpd error appears, you need to make sure that mpc is working correctly. (simply type mpc)  
  if mpc is not working, try to reinstall mpd-mopidy.
- Otherwise, you may need to add a sleeping time in your autoplay.sh file. To do so, simply add "sleep 10" before the "mpc volume 1" line.
+ Otherwise, you may need to add a sleeping time in your autoplay.sh file.
+ To do so, simply add "sleep 10" before the "mpc volume 1" line.
  ```
  - The power button is not working.
  ```
