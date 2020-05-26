@@ -5,7 +5,7 @@ for song in `ls $path | grep ".mp3\|.wav\|.flac"`; do if [ `cat /usr/share/PIpod
 mv /usr/share/PIpodScripts/database /usr/share/PIpodScripts/database.save
 cat /tmp/.db$ /usr/share/PIpodScripts/database.save > /usr/share/PIpodScripts/database
 
-sleep 60
+while [ `mpc`=="mpd error: Connection refused" ]; do sleep 1; done
 mpc volume 1
 
 #Loading the playlist
