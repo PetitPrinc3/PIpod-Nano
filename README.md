@@ -230,13 +230,13 @@ And you're done ! You've succesfully (hopefully) performed every modification th
  - The power button is not working.
  ```
  Answer : check wether the /etc/rc.local file is executable or not. 
- make sure you did not forget the "&". 
+ Make sure you did not forget the "&". 
  Check your python syntax.
  ```
  
  - Some of my files are not loading.
  ```
- Answer : Are you using a .mp3 / .wav / .flac file ?
+ Answer : Are you using a .mp3 / .wav / .flac file ? Don't your files contain spaces in their names ?
  If you are not, please make sure your file is mopidy compatible and add your extension to the autoplay.sh as follows :
  sudo nano /usr/share/PIpodScripts/autoplay.sh
  Edit this line :
