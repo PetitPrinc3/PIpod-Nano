@@ -30,7 +30,7 @@ These instructions will get you a copy of the project up and running on your pi.
 
 ### Prerequisites
 
-You'll need a fresh install of [Raspbian](https://www.raspberrypi.org/downloads/raspbian/) Buster.
+You'll need a fresh install of [Raspberrypi OS](https://www.raspberrypi.org/downloads/) (It is also Rasbian Buster compatible. Older versions were not tested).
 Before following the steps below, make sure that your pi is connected to the internet and your Pirate Audio board is connected to your pi. At this point, it is preferable to have the pi plugged into the main, rather than having it running on the ups power supply. 
 
 ### Automatic Setup
